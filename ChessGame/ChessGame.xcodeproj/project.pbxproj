@@ -16,6 +16,11 @@
 		D2BDB29F2860573900A124BE /* ChessGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB29E2860573900A124BE /* ChessGameTests.swift */; };
 		D2BDB2A92860573900A124BE /* ChessGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2A82860573900A124BE /* ChessGameUITests.swift */; };
 		D2BDB2AB2860573900A124BE /* ChessGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2AA2860573900A124BE /* ChessGameUITestsLaunchTests.swift */; };
+		D2BDB2B9286059C100A124BE /* RuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2B8286059C100A124BE /* RuleManager.swift */; };
+		D2BDB2BB28605ACD00A124BE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2BA28605ACD00A124BE /* Board.swift */; };
+		D2BDB2BE28605BB700A124BE /* BasePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2BD28605BB700A124BE /* BasePiece.swift */; };
+		D2BDB2C028605E9B00A124BE /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2BF28605E9B00A124BE /* Point.swift */; };
+		D2BDB2C228605F6400A124BE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2C128605F6400A124BE /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		D2BDB2A42860573900A124BE /* ChessGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BDB2A82860573900A124BE /* ChessGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameUITests.swift; sourceTree = "<group>"; };
 		D2BDB2AA2860573900A124BE /* ChessGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2BDB2B8286059C100A124BE /* RuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleManager.swift; sourceTree = "<group>"; };
+		D2BDB2BA28605ACD00A124BE /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		D2BDB2BD28605BB700A124BE /* BasePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePiece.swift; sourceTree = "<group>"; };
+		D2BDB2BF28605E9B00A124BE /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		D2BDB2C128605F6400A124BE /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,11 @@
 				D2BDB2902860573900A124BE /* Assets.xcassets */,
 				D2BDB2922860573900A124BE /* LaunchScreen.storyboard */,
 				D2BDB2952860573900A124BE /* Info.plist */,
+				D2BDB2B8286059C100A124BE /* RuleManager.swift */,
+				D2BDB2C128605F6400A124BE /* Utility.swift */,
+				D2BDB2BA28605ACD00A124BE /* Board.swift */,
+				D2BDB2BF28605E9B00A124BE /* Point.swift */,
+				D2BDB2BC28605BA500A124BE /* Pieces */,
 			);
 			path = ChessGame;
 			sourceTree = "<group>";
@@ -125,6 +140,14 @@
 				D2BDB2AA2860573900A124BE /* ChessGameUITestsLaunchTests.swift */,
 			);
 			path = ChessGameUITests;
+			sourceTree = "<group>";
+		};
+		D2BDB2BC28605BA500A124BE /* Pieces */ = {
+			isa = PBXGroup;
+			children = (
+				D2BDB2BD28605BB700A124BE /* BasePiece.swift */,
+			);
+			path = Pieces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +283,12 @@
 			files = (
 				D2BDB28C2860573700A124BE /* ViewController.swift in Sources */,
 				D2BDB2882860573700A124BE /* AppDelegate.swift in Sources */,
+				D2BDB2BB28605ACD00A124BE /* Board.swift in Sources */,
 				D2BDB28A2860573700A124BE /* SceneDelegate.swift in Sources */,
+				D2BDB2C228605F6400A124BE /* Utility.swift in Sources */,
+				D2BDB2C028605E9B00A124BE /* Point.swift in Sources */,
+				D2BDB2B9286059C100A124BE /* RuleManager.swift in Sources */,
+				D2BDB2BE28605BB700A124BE /* BasePiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
