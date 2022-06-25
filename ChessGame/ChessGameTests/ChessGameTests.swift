@@ -33,5 +33,4 @@ class ChessGameTests: XCTestCase {
         }
     }
 
-    func 
 }

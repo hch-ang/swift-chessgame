@@ -12,6 +12,7 @@
 		D21E8822286428AD009BB87D /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E8821286428AD009BB87D /* Rook.swift */; };
 		D21E8824286428E8009BB87D /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E8823286428E8009BB87D /* Queen.swift */; };
 		D21E88262864290C009BB87D /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E88252864290C009BB87D /* Knight.swift */; };
+		D21E88322866EFFD009BB87D /* ChessGamePieceInitializeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E88312866EFFD009BB87D /* ChessGamePieceInitializeTests.swift */; };
 		D2BDB2882860573700A124BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2872860573700A124BE /* AppDelegate.swift */; };
 		D2BDB28A2860573700A124BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2892860573700A124BE /* SceneDelegate.swift */; };
 		D2BDB28C2860573700A124BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB28B2860573700A124BE /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		D21E8821286428AD009BB87D /* Rook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rook.swift; sourceTree = "<group>"; };
 		D21E8823286428E8009BB87D /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
 		D21E88252864290C009BB87D /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		D21E88312866EFFD009BB87D /* ChessGamePieceInitializeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessGamePieceInitializeTests.swift; sourceTree = "<group>"; };
 		D2BDB2842860573700A124BE /* ChessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BDB2872860573700A124BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2BDB2892860573700A124BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D2BDB29E2860573900A124BE /* ChessGameTests.swift */,
+				D21E88312866EFFD009BB87D /* ChessGamePieceInitializeTests.swift */,
 			);
 			path = ChessGameTests;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BDB29F2860573900A124BE /* ChessGameTests.swift in Sources */,
+				D21E88322866EFFD009BB87D /* ChessGamePieceInitializeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

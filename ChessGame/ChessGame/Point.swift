@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Point {
+struct Point: Equatable {
     var rank: Int // 가로
     var file: Int // 세로
 }
