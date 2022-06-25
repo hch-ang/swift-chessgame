@@ -33,7 +33,12 @@ enum PieceType {
 }
 
 protocol Pieceable {
-    var team: Team { get } // 팀
-    var type: PieceType { get } // 타입
-    var point: Point { get set } // 위치
+    var uniCode: String { get }
+    func getScore() -> Int
+}
+
+class BasePiece: Pieceable {
+    var uniCode: String { "" }
+    
+    func getScore() -> Int { return 0 }
 }

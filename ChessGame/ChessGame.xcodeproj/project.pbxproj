@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21E881E286426F9009BB87D /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E881D286426F9009BB87D /* Pawn.swift */; };
+		D21E882028642874009BB87D /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E881F28642874009BB87D /* Bishop.swift */; };
+		D21E8822286428AD009BB87D /* Luke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E8821286428AD009BB87D /* Luke.swift */; };
+		D21E8824286428E8009BB87D /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E8823286428E8009BB87D /* Queen.swift */; };
+		D21E88262864290C009BB87D /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21E88252864290C009BB87D /* Knight.swift */; };
 		D2BDB2882860573700A124BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2872860573700A124BE /* AppDelegate.swift */; };
 		D2BDB28A2860573700A124BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2892860573700A124BE /* SceneDelegate.swift */; };
 		D2BDB28C2860573700A124BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB28B2860573700A124BE /* ViewController.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D21E881D286426F9009BB87D /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
+		D21E881F28642874009BB87D /* Bishop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bishop.swift; sourceTree = "<group>"; };
+		D21E8821286428AD009BB87D /* Luke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luke.swift; sourceTree = "<group>"; };
+		D21E8823286428E8009BB87D /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		D21E88252864290C009BB87D /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
 		D2BDB2842860573700A124BE /* ChessGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BDB2872860573700A124BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2BDB2892860573700A124BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				D2BDB2BD28605BB700A124BE /* BasePiece.swift */,
+				D21E881D286426F9009BB87D /* Pawn.swift */,
+				D21E881F28642874009BB87D /* Bishop.swift */,
+				D21E8821286428AD009BB87D /* Luke.swift */,
+				D21E8823286428E8009BB87D /* Queen.swift */,
+				D21E88252864290C009BB87D /* Knight.swift */,
 			);
 			path = Pieces;
 			sourceTree = "<group>";
@@ -281,13 +296,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21E8824286428E8009BB87D /* Queen.swift in Sources */,
 				D2BDB28C2860573700A124BE /* ViewController.swift in Sources */,
+				D21E8822286428AD009BB87D /* Luke.swift in Sources */,
 				D2BDB2882860573700A124BE /* AppDelegate.swift in Sources */,
 				D2BDB2BB28605ACD00A124BE /* Board.swift in Sources */,
 				D2BDB28A2860573700A124BE /* SceneDelegate.swift in Sources */,
 				D2BDB2C228605F6400A124BE /* Utility.swift in Sources */,
 				D2BDB2C028605E9B00A124BE /* Point.swift in Sources */,
+				D21E88262864290C009BB87D /* Knight.swift in Sources */,
+				D21E882028642874009BB87D /* Bishop.swift in Sources */,
 				D2BDB2B9286059C100A124BE /* RuleManager.swift in Sources */,
+				D21E881E286426F9009BB87D /* Pawn.swift in Sources */,
 				D2BDB2BE28605BB700A124BE /* BasePiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

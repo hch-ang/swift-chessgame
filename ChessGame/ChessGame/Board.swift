@@ -10,7 +10,7 @@ import Foundation
 final class Board {
     let boardRankRange = 8
     let boardFileRange = 8
-    var map: [[Pieceable]] = []
+    var map: [[Pieceable?]] = []
 
     lazy private var ruleManeger: RuleManager = {
         return RuleManager(board: self)
@@ -18,6 +18,18 @@ final class Board {
     
     func startGame() {
         
+    }
+    
+    func showBoard() {
+        
+    }
+    
+    func printScore() {
+        
+    }
+    
+    func checkScore(_ team: Team) -> Int {
+        return 0
     }
     
     func move(from: Point, to: Point) {
