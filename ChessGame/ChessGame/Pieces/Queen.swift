@@ -9,7 +9,6 @@ import Foundation
 
 final class Queen: BasePiece {
     private let team: Team
-    private let type: PieceType = .queen
     override var uniCode: String { team == .white ? "♕" : "♛" }
     
     init(team: Team) {
@@ -17,6 +16,6 @@ final class Queen: BasePiece {
     }
 
     override func getScore() -> Int {
-        return type.scorePoint
+        return 9
     }
 }
