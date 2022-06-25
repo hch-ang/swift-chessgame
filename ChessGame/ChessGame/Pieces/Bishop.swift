@@ -7,15 +7,25 @@
 
 import Foundation
 
-final class Bishop: BasePiece {
+final class Bishop: BasePiece, Pieceable {
     private let team: Team
-    override var uniCode: String { team == .white ? "♗" : "♝" }
-    
+    var uniCode: String { team == .white ? "♗" : "♝" }
+    override class var initialFiles: [Int] { [2, 5] }
+    override class var maxNumberOfPiece: Int { 2 }
+
     init(team: Team) {
         self.team = team
     }
 
-    override func getScore() -> Int {
+    func getScore() -> Int {
         return 3
+    }
+
+    func movablePoints(_ maxRank: Int, _ maxFile: Int) -> [Point] {
+        return []
+    }
+    
+    override class func initialRank(team: Team) -> Int {
+        return team == .black ? 0 : 7
     }
 }

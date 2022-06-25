@@ -8,6 +8,6 @@
 import Foundation
 
 struct Point {
-    var rank: String // 가로
+    var rank: Int // 가로
     var file: Int // 세로
 }

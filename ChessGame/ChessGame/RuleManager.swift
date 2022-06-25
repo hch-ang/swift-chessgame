@@ -8,7 +8,7 @@
 import Foundation
 
 final class RuleManager {
-    private let board: Board
+    private unowned let board: Board
     
     init(board: Board) {
         self.board = board
@@ -16,16 +16,22 @@ final class RuleManager {
     
     func checkPieceRange(point: Point) -> Bool {
         let row = point.file
-        let column = UtilityManager.convertRankToIndex(rank: point.rank)
+        let column = point.rank
 
-        if checkRange(index: row) && checkRange(index: column) {
+        if checkRankRange(index: row) && checkFileRange(index: column) {
             return true
         }
         
         return false
     }
     
-    private func checkRange(index: Int) -> Bool {
+    private func checkRankRange(index: Int) -> Bool {
+        guard index >= 0, index < board.boardRankRange else { return false }
+
+        return true
+    }
+
+    private func checkFileRange(index: Int) -> Bool {
         guard index >= 0, index < board.boardFileRange else { return false }
 
         return true
