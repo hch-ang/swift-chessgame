@@ -7,33 +7,28 @@
 
 import Foundation
 
-enum Team {
+enum Team: CaseIterable {
     case black, white
 }
 
-enum PieceType {
-    case pawn, bishop, luke, queen, knight, king
+protocol Pieceable {
+    var uniCode: String { get }
+    func getScore() -> Int
+    func movablePoints(_ maxRank: Int, _ maxFile: Int) -> [Point]
     
-    var scorePoint: Int {
-        switch self {
-        case .pawn:
-            return 1
-        case .bishop:
-            return 3
-        case .luke:
-            return 5
-        case .queen:
-            return 9
-        case .knight:
-            return 3
-        case .king:
-            return 0
-        }
-    }
+    static func initialPoints(team: Team, _ numberOfPieces: Int) -> [Point]
 }
 
-protocol Pieceable {
-    var team: Team { get } // 팀
-    var type: PieceType { get } // 타입
-    var point: Point { get set } // 위치
+class BasePiece {
+    class var initialFiles: [Int] { [] }
+    class var maxNumberOfPiece: Int { 0 }
+
+    class func initialRank(team: Team) -> Int { return 0 }
+
+    static func initialPoints(team: Team, _ numberOfPieces: Int) -> [Point] {
+        guard numberOfPieces <= maxNumberOfPiece else { return [] }
+        
+        let randomNumbers = RandomGenerator.generate(numberOfResult: numberOfPieces, maxValue: initialFiles.count - 1)
+        return randomNumbers.map { Point(rank: initialRank(team: team), file: initialFiles[$0]) }
+    }
 }
