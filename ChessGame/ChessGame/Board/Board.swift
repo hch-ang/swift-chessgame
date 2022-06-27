@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 final class Board {
     let boardRankRange = 8
     let boardFileRange = 8
-    var map: [[Pieceable?]] = []
+    @Published var map: [[Pieceable?]] = []
 
     lazy private var ruleManeger: RuleManager = {
         return RuleManager(board: self)
@@ -64,5 +65,21 @@ final class Board {
     func move(from: Point, to: Point) {
         guard ruleManeger.checkPieceRange(point: from), ruleManeger.checkPieceRange(point: to) else { return }
         
+    }
+    
+    // MARK: - input
+    
+    func selectPoint(point: Point) {
+        print("select Point : \(point)")
+    }
+    
+    // MARK: - Display
+
+    func getCode(_ point: Point) -> String? {
+        guard ruleManeger.checkPieceRange(point: point),
+              let pieceable = map[point.rank][point.file]
+        else { return nil }
+        
+        return pieceable.uniCode
     }
 }

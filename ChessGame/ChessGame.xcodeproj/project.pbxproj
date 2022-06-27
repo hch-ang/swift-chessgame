@@ -29,6 +29,8 @@
 		D2BDB2BE28605BB700A124BE /* BasePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2BD28605BB700A124BE /* BasePiece.swift */; };
 		D2BDB2C028605E9B00A124BE /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2BF28605E9B00A124BE /* Point.swift */; };
 		D2BDB2C228605F6400A124BE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BDB2C128605F6400A124BE /* Utility.swift */; };
+		D2CBF735286979640082463D /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CBF734286979640082463D /* BoardViewController.swift */; };
+		D2CBF73D286987E40082463D /* PointLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CBF73C286987E40082463D /* PointLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		D2BDB2BD28605BB700A124BE /* BasePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePiece.swift; sourceTree = "<group>"; };
 		D2BDB2BF28605E9B00A124BE /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		D2BDB2C128605F6400A124BE /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		D2CBF734286979640082463D /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		D2CBF73C286987E40082463D /* PointLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +136,11 @@
 				D2BDB2902860573900A124BE /* Assets.xcassets */,
 				D2BDB2922860573900A124BE /* LaunchScreen.storyboard */,
 				D2BDB2952860573900A124BE /* Info.plist */,
+				D2CBF7332869790E0082463D /* Board */,
 				D2BDB2B8286059C100A124BE /* RuleManager.swift */,
 				D2BDB2C128605F6400A124BE /* Utility.swift */,
-				D2BDB2BA28605ACD00A124BE /* Board.swift */,
 				D2BDB2BF28605E9B00A124BE /* Point.swift */,
+				D2CBF73C286987E40082463D /* PointLabel.swift */,
 				D2BDB2BC28605BA500A124BE /* Pieces */,
 			);
 			path = ChessGame;
@@ -172,6 +177,15 @@
 				D21E88252864290C009BB87D /* Knight.swift */,
 			);
 			path = Pieces;
+			sourceTree = "<group>";
+		};
+		D2CBF7332869790E0082463D /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				D2CBF734286979640082463D /* BoardViewController.swift */,
+				D2BDB2BA28605ACD00A124BE /* Board.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +322,12 @@
 				D21E8824286428E8009BB87D /* Queen.swift in Sources */,
 				D2BDB28C2860573700A124BE /* ViewController.swift in Sources */,
 				D21E8822286428AD009BB87D /* Rook.swift in Sources */,
+				D2CBF73D286987E40082463D /* PointLabel.swift in Sources */,
 				D2BDB2882860573700A124BE /* AppDelegate.swift in Sources */,
 				D2BDB2BB28605ACD00A124BE /* Board.swift in Sources */,
 				D2BDB28A2860573700A124BE /* SceneDelegate.swift in Sources */,
 				D2BDB2C228605F6400A124BE /* Utility.swift in Sources */,
+				D2CBF735286979640082463D /* BoardViewController.swift in Sources */,
 				D2BDB2C028605E9B00A124BE /* Point.swift in Sources */,
 				D21E88262864290C009BB87D /* Knight.swift in Sources */,
 				D21E882028642874009BB87D /* Bishop.swift in Sources */,
