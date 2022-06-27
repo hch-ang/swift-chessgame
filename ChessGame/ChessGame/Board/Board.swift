@@ -8,12 +8,22 @@
 import Foundation
 import Combine
 
+enum GameStatus {
+    case selectFirst
+    case selectSecond
+}
+
 final class Board {
     let boardRankRange = 8
     let boardFileRange = 8
+    
     @Published var map: [[Pieceable?]] = []
     @Published var guideMessage: String?
     @Published var statusMessage: String?
+    @Published var turn: Team = .black
+    
+    private var status: GameStatus = .selectFirst
+    private var selectedPiece: Pieceable?
 
     lazy private var ruleManeger: RuleManager = {
         return RuleManager(board: self)
@@ -83,6 +93,20 @@ final class Board {
     
     func selectPoint(point: Point) {
         guard ruleManeger.checkPieceRange(point: point) else { return }
+        
+        switch status {
+        case .selectFirst:
+            selectFirstPiece(point: point)
+        case .selectSecond:
+            selectSecondPiece(point: point)
+        }
+    }
+    
+    private func selectFirstPiece(point: Point) {
+        
+    }
+    
+    private func selectSecondPiece(point: Point) {
         
     }
     

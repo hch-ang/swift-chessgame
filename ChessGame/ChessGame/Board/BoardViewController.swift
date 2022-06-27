@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 class BoardViewController: UIViewController {
+    @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet weak var bodyView: UIView!
     @IBOutlet weak var guideMessage: UILabel!
     @IBOutlet weak var statusMessage: UILabel!
@@ -49,6 +50,12 @@ class BoardViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.refreshView()
+            }.store(in: &cancellables)
+        
+        board.$turn
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] team in
+                self?.setTurnMessage(team)
             }.store(in: &cancellables)
         
         board.$guideMessage
@@ -115,6 +122,7 @@ class BoardViewController: UIViewController {
     }
     
     private func setMessageLabels() {
+        turnLabel.font = .systemFont(ofSize: 20)
         guideMessage.textColor = .black
         guideMessage.font = .systemFont(ofSize: 32)
         statusMessage.textColor = .black
@@ -142,6 +150,22 @@ class BoardViewController: UIViewController {
                 pointLabels[i][j].text = board.getCode(point)
             }
         }
+    }
+    
+    private func setTurnMessage(_ team: Team) {
+        let text: String
+        switch team {
+        case .black:
+            text = "Black 턴"
+            turnLabel.textColor = .white
+            turnLabel.backgroundColor = .black
+        case .white:
+            text = "White 턴"
+            turnLabel.textColor = .black
+            turnLabel.backgroundColor = .white
+        }
+        
+        turnLabel.text = text
     }
     
     private func setGuideMessage(_ message: String?) {
