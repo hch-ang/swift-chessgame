@@ -12,6 +12,18 @@ final class Bishop: BasePiece, Pieceable {
     var uniCode: String { team == .white ? "♗" : "♝" }
     override class var initialFiles: [Int] { [2, 5] }
     override class var maxNumberOfPiece: Int { 2 }
+    private let possibleMoves: [Point] = {
+        var points = [Point]()
+        
+        for i in 1...7 {
+            points.append(Point(rank: -i, file: -i))
+            points.append(Point(rank: -i, file: i))
+            points.append(Point(rank: i, file: -i))
+            points.append(Point(rank: i, file: i))
+        }
+        
+        return points
+    }()
 
     init(team: Team) {
         self.team = team
@@ -21,8 +33,8 @@ final class Bishop: BasePiece, Pieceable {
         return 3
     }
 
-    func movablePoints(_ maxRank: Int, _ maxFile: Int) -> [Point] {
-        return []
+    func movablePointCandidates(from: Point) -> [Point] {
+        return possibleMoves.map { $0 + from }
     }
     
     override class func initialRank(team: Team) -> Int {

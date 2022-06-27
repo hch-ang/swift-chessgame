@@ -14,7 +14,7 @@ enum Team: CaseIterable {
 protocol Pieceable {
     var uniCode: String { get }
     func getScore() -> Int
-    func movablePoints(_ maxRank: Int, _ maxFile: Int) -> [Point]
+    func movablePointCandidates(from: Point) -> [Point]
     
     static func initialPoints(team: Team, _ numberOfPieces: Int) -> [Point]
 }

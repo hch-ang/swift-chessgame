@@ -12,6 +12,20 @@ final class Knight: BasePiece, Pieceable {
     var uniCode: String { team == .white ? "♘" : "♞" }
     override class var initialFiles: [Int] { [1, 6] }
     override class var maxNumberOfPiece: Int { 2 }
+    private let possibleMoves: [Point] = {
+        var points = [Point]()
+        
+        points.append(Point(rank: -2, file: -1))
+        points.append(Point(rank: -2, file: 1))
+        points.append(Point(rank: 2, file: -1))
+        points.append(Point(rank: 2, file: 1))
+        points.append(Point(rank: -1, file: -2))
+        points.append(Point(rank: 1, file: -2))
+        points.append(Point(rank: -1, file: 2))
+        points.append(Point(rank: 1, file: 2))
+
+        return points
+    }()
 
     init(team: Team) {
         self.team = team
@@ -21,8 +35,8 @@ final class Knight: BasePiece, Pieceable {
         return 3
     }
 
-    func movablePoints(_ maxRank: Int, _ maxFile: Int) -> [Point] {
-        return []
+    func movablePointCandidates(from: Point) -> [Point] {
+        return possibleMoves.map { $0 + from }
     }
     
     override class func initialRank(team: Team) -> Int {

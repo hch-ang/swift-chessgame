@@ -10,4 +10,8 @@ import Foundation
 struct Point: Equatable {
     var rank: Int // 가로
     var file: Int // 세로
+    
+    static func +(left: Point, right: Point) -> Point {
+        return Point(rank: left.rank + right.rank, file: left.file + right.file)
+    }
 }
