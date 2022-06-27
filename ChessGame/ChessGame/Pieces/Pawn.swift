@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Pawn: BasePiece, Pieceable {
+final class Pawn: InitiatiblePiece {
     private let team: Team
     var uniCode: String { team == .white ? "♙" : "♟" }
     private lazy var possibleMoves: [Point] = {
@@ -27,8 +27,8 @@ final class Pawn: BasePiece, Pieceable {
         return points
     }()
 
-    override class var initialFiles: [Int] { [0, 1, 2, 3, 4, 5, 6, 7] }
-    override class var maxNumberOfPiece: Int { 8 }
+    class var initialFiles: [Int] { [0, 1, 2, 3, 4, 5, 6, 7] }
+    class var maxNumberOfPiece: Int { 8 }
     
     init(team: Team) {
         self.team = team
@@ -42,7 +42,7 @@ final class Pawn: BasePiece, Pieceable {
         return possibleMoves.map { $0 + from }
     }
     
-    override class func initialRank(team: Team) -> Int {
+    class func initialRank(team: Team) -> Int {
         return team == .black ? 1 : 6
     }
 }

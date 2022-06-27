@@ -19,12 +19,13 @@ protocol Pieceable {
     static func initialPoints(team: Team, _ numberOfPieces: Int) -> [Point]
 }
 
-class BasePiece {
-    class var initialFiles: [Int] { [] }
-    class var maxNumberOfPiece: Int { 0 }
+protocol InitiatiblePiece: Pieceable {
+    static var initialFiles: [Int] { get }
+    static var maxNumberOfPiece: Int { get }
+    static func initialRank(team: Team) -> Int
+}
 
-    class func initialRank(team: Team) -> Int { return 0 }
-
+extension InitiatiblePiece {
     static func initialPoints(team: Team, _ numberOfPieces: Int) -> [Point] {
         guard numberOfPieces <= maxNumberOfPiece else { return [] }
         

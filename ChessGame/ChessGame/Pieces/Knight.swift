@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class Knight: BasePiece, Pieceable {
+final class Knight: InitiatiblePiece {
     private let team: Team
     var uniCode: String { team == .white ? "♘" : "♞" }
-    override class var initialFiles: [Int] { [1, 6] }
-    override class var maxNumberOfPiece: Int { 2 }
+    class var initialFiles: [Int] { [1, 6] }
+    class var maxNumberOfPiece: Int { 2 }
     private let possibleMoves: [Point] = {
         var points = [Point]()
         
@@ -39,7 +39,7 @@ final class Knight: BasePiece, Pieceable {
         return possibleMoves.map { $0 + from }
     }
     
-    override class func initialRank(team: Team) -> Int {
+    class func initialRank(team: Team) -> Int {
         return team == .black ? 0 : 7
     }
 }
