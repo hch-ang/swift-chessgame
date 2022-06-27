@@ -8,7 +8,7 @@
 import Foundation
 
 final class Knight: InitiatiblePiece {
-    private let team: Team
+    let team: Team
     var uniCode: String { team == .white ? "♘" : "♞" }
     class var initialFiles: [Int] { [1, 6] }
     class var maxNumberOfPiece: Int { 2 }

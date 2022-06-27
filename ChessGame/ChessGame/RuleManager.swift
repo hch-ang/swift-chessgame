@@ -36,4 +36,16 @@ final class RuleManager {
 
         return true
     }
+    
+    func filterCandidates(team: Team, candidates: [Point]) -> [Point] {
+        var result = candidates
+        
+        // boundary check
+        result = result.filter { checkPieceRange(point: $0) }
+        
+        // team check
+        result = result.filter { !(board.map[$0.rank][$0.file]?.team == team) }
+        
+        return result
+    }
 }

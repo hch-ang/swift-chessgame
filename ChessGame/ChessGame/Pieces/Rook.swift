@@ -8,7 +8,7 @@
 import Foundation
 
 final class Rook: InitiatiblePiece {
-    private let team: Team
+    let team: Team
     var uniCode: String { team == .white ? "♖" : "♜" }
     class var initialFiles: [Int] { [0, 7] }
     class var maxNumberOfPiece: Int { 2 }

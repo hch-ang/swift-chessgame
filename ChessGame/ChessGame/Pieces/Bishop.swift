@@ -8,7 +8,7 @@
 import Foundation
 
 final class Bishop: InitiatiblePiece {
-    private let team: Team
+    let team: Team
     var uniCode: String { team == .white ? "♗" : "♝" }
     class var initialFiles: [Int] { [2, 5] }
     class var maxNumberOfPiece: Int { 2 }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class Pawn: InitiatiblePiece {
-    private let team: Team
+    let team: Team
     var uniCode: String { team == .white ? "♙" : "♟" }
     private lazy var possibleMoves: [Point] = {
         var points = [Point]()

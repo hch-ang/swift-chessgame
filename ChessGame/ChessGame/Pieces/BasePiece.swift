@@ -13,6 +13,7 @@ enum Team: CaseIterable {
 
 protocol Pieceable {
     var uniCode: String { get }
+    var team: Team { get }
     func getScore() -> Int
     func movablePointCandidates(from: Point) -> [Point]
     

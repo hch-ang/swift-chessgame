@@ -14,6 +14,11 @@ enum GameStatus {
 }
 
 final class Board {
+    struct SelectInfo {
+        let selectedPoint: Point
+        let possiblePoints: [Point]
+    }
+    
     let boardRankRange = 8
     let boardFileRange = 8
     
@@ -21,9 +26,9 @@ final class Board {
     @Published var guideMessage: String?
     @Published var statusMessage: String?
     @Published var turn: Team = .black
+    @Published var selectInfo: SelectInfo?
     
     private var status: GameStatus = .selectFirst
-    private var selectedPiece: Pieceable?
 
     lazy private var ruleManeger: RuleManager = {
         return RuleManager(board: self)
@@ -103,11 +108,33 @@ final class Board {
     }
     
     private func selectFirstPiece(point: Point) {
+        guard ruleManeger.checkPieceRange(point: point),
+              let pieceable = map[point.rank][point.file]
+        else { return }
+        
+        let possiblePoints = ruleManeger.filterCandidates(team: pieceable.team, candidates: pieceable.movablePointCandidates(from: point))
+        
+        guard possiblePoints.count > 0 else {
+            setGuideMessage("해당 말은 이동 가능한 경로가 없습니다")
+            print("해당 말은 이동 가능한 경로가 없습니다")
+            return
+        }
+        
+        selectInfo = SelectInfo(selectedPoint: point, possiblePoints: possiblePoints)
+        for point in possiblePoints {
+            print(point)
+        }
+        
+        setGuideMessage("이동하실 위치를 골라주세요")
+        setStatusMessage(nil)
         
     }
     
     private func selectSecondPiece(point: Point) {
-        
+        guard ruleManeger.checkPieceRange(point: point),
+              let pieceable = map[point.rank][point.file]
+        else { return }
+
     }
     
     // MARK: - Display

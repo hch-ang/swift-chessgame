@@ -58,6 +58,12 @@ class BoardViewController: UIViewController {
                 self?.setTurnMessage(team)
             }.store(in: &cancellables)
         
+        board.$selectInfo
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] info in
+                self?.showSelectInfo(info)
+            }.store(in: &cancellables)
+        
         board.$guideMessage
             .receive(on: DispatchQueue.main)
             .sink { [weak self] message in
@@ -149,6 +155,26 @@ class BoardViewController: UIViewController {
                 let point = Point(rank: i, file: j)
                 pointLabels[i][j].text = board.getCode(point)
             }
+        }
+    }
+    
+    private func showSelectInfo(_ info: Board.SelectInfo?) {
+        guard let selectedPoint = info?.selectedPoint,
+              let possiblePoints = info?.possiblePoints
+        else { return }
+        
+        for i in 0..<8 {
+            for j in 0..<8 {
+                pointLabels[i][j].backgroundColor = .clear
+            }
+        }
+        
+        pointLabels[selectedPoint.rank][selectedPoint.file].backgroundColor = .init(red: 0, green: 1, blue: 0, alpha: 0.3)
+        
+        for point in possiblePoints {
+            guard point.rank >= 0 && point.rank < 8 && point.file >= 0 && point.file < 8 else { continue }
+
+            pointLabels[point.rank][point.file].backgroundColor = .init(white: 0, alpha: 0.3)
         }
     }
     
