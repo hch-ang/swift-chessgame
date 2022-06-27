@@ -12,6 +12,8 @@ final class Board {
     let boardRankRange = 8
     let boardFileRange = 8
     @Published var map: [[Pieceable?]] = []
+    @Published var guideMessage: String?
+    @Published var statusMessage: String?
 
     lazy private var ruleManeger: RuleManager = {
         return RuleManager(board: self)
@@ -21,7 +23,8 @@ final class Board {
         resetBoard()
         setPieces()
         
-        showBoard()
+        // display
+        didStartGame()
     }
     
     private func resetBoard() {
@@ -36,6 +39,15 @@ final class Board {
             _ = Queen.initialPoints(team: team, 1).map { map[$0.rank][$0.file] = Queen(team: team) }
             _ = Knight.initialPoints(team: team, 2).map { map[$0.rank][$0.file] = Knight(team: team) }
         }
+    }
+    
+    private func didStartGame() {
+        // for UI
+        setStatusMessage("게임이 초기화 되었습니다")
+        setGuideMessage("체스말을 골라주세요")
+        
+        // for Debug
+        showBoard()
     }
     
     func showBoard() {
@@ -70,7 +82,8 @@ final class Board {
     // MARK: - input
     
     func selectPoint(point: Point) {
-        print("select Point : \(point)")
+        guard ruleManeger.checkPieceRange(point: point) else { return }
+        
     }
     
     // MARK: - Display
@@ -81,5 +94,13 @@ final class Board {
         else { return nil }
         
         return pieceable.uniCode
+    }
+    
+    private func setGuideMessage(_ message: String?) {
+        guideMessage = message
+    }
+    
+    private func setStatusMessage(_ message: String?) {
+        statusMessage = message
     }
 }

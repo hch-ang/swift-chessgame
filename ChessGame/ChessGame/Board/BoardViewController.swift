@@ -10,6 +10,8 @@ import Combine
 
 class BoardViewController: UIViewController {
     @IBOutlet weak var bodyView: UIView!
+    @IBOutlet weak var guideMessage: UILabel!
+    @IBOutlet weak var statusMessage: UILabel!
     
     private let board = Board()
     private var cancellables = Set<AnyCancellable>()
@@ -48,6 +50,18 @@ class BoardViewController: UIViewController {
             .sink { [weak self] _ in
                 self?.refreshView()
             }.store(in: &cancellables)
+        
+        board.$guideMessage
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] message in
+                self?.setGuideMessage(message)
+            }.store(in: &cancellables)
+        
+        board.$statusMessage
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] message in
+                self?.setStatusMessage(message)
+            }.store(in: &cancellables)
     }
     
     // MARK: - configure
@@ -55,6 +69,7 @@ class BoardViewController: UIViewController {
     private func configureUI() {
         configureBodyViewUI()
         configureStackView()
+        setMessageLabels()
     }
     
     private func configureBodyViewUI() {
@@ -99,6 +114,13 @@ class BoardViewController: UIViewController {
         }
     }
     
+    private func setMessageLabels() {
+        guideMessage.textColor = .black
+        guideMessage.font = .systemFont(ofSize: 32)
+        statusMessage.textColor = .black
+        statusMessage.font = .systemFont(ofSize: 15)
+    }
+    
     // MARK: - Input
     
     @objc
@@ -120,5 +142,13 @@ class BoardViewController: UIViewController {
                 pointLabels[i][j].text = board.getCode(point)
             }
         }
+    }
+    
+    private func setGuideMessage(_ message: String?) {
+        guideMessage.text = message
+    }
+
+    private func setStatusMessage(_ message: String?) {
+        statusMessage.text = message
     }
 }
